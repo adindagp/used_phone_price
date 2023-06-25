@@ -2,13 +2,13 @@ version: '3'
 services:
   streamlit:
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: ./API
+      dockerfile: ../dockerfile
     ports:
       - 8000:8000
   uvicorn:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: dockerfile
     ports:
       - 8001:8000

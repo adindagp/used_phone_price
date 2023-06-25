@@ -2,12 +2,12 @@ import streamlit as st
 import pandas as pd
 import requests
 
-df = pd.read_csv("/home/adinda_gita/used_phone_price/Data/phone_final_filtered.csv")
+df = pd.read_csv("phone_final_filtered.csv")
 df.drop("Jenis Handphone",axis=1)
 
 def main():
     st.title("Used Phone Price Prediction")
-    Storage = st.number_input("Storage (GB)")
+    Storage = st.number_input("Storage")
     Ukuran_Layar = st.number_input("Ukuran Layar (inchi)")
     Kamera_Utama = st.number_input("Kamera Utama (MP)",value=0, step=1)
     Kapasitas_Baterai = st.number_input("Kapasitas Baterai (mAh)",value=0, step=1)
@@ -36,6 +36,5 @@ def main():
             st.write("Prediction:", result["prediction"])
         else:
             st.error("An error occurred while processing the request.")
-            
 if __name__ == "__main__":
     main()

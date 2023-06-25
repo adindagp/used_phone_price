@@ -16,7 +16,7 @@ app = FastAPI(
     debug=True  # Enable debug mode
 )
 
-pickle_file = open('/home/adinda_gita/used_phone_price/Model/DecisionTreeModel.pkl','rb')
+pickle_file = open('DecisionTreeModel.pkl','rb')
 model = pickle.load(pickle_file)
 
 # Update with your API's URL
